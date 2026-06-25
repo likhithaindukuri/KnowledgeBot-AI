@@ -18,7 +18,7 @@ app = FastAPI(title="Nexus")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=os.getenv("ALLOWED_ORIGINS").split(","),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
