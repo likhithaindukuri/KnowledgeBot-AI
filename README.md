@@ -1,4 +1,4 @@
-# KnowledgeBot AI
+# Nexus
 
 A Multi-Tenant AI Knowledge Platform built using React, FastAPI, PostgreSQL, ChromaDB, and RAG.
 
@@ -23,4 +23,4 @@ Database: PostgreSQL
 
 Vector Database: ChromaDB
 
-AI: Gemini API
+AI: Groq API

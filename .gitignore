@@ -21,3 +21,10 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project data
+backend/uploads/
+backend/chroma_data/
+
+backend/.env.example
+frontend/.env.example
