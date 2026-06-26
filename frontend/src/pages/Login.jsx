@@ -56,7 +56,7 @@ export default function Login() {
 
       navigate(`/org/${data.organization.slug}/dashboard`);
     } catch {
-      setError("Unable to connect to server.");
+      setError("Unable to connect to the server.");
     } finally {
       setLoading(false);
     }
@@ -65,7 +65,7 @@ export default function Login() {
   return (
     <AuthLayout
       title="Welcome back"
-      subtitle="Sign in to access your AI knowledge platform."
+      subtitle="Sign in to continue to your workspace."
     >
       <form
         onSubmit={submit}
@@ -79,8 +79,9 @@ export default function Login() {
           <input
             type="email"
             required
-            className="w-full border border-neutral-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
-            placeholder="john@university.edu"
+            autoComplete="email"
+            placeholder="you@example.com"
+            className="w-full rounded-xl border border-neutral-300 px-4 py-3 transition focus:border-black focus:outline-none focus:ring-2 focus:ring-black"
             value={form.email}
             onChange={(e) =>
               setForm({
@@ -99,8 +100,9 @@ export default function Login() {
           <input
             type="password"
             required
-            className="w-full border border-neutral-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+            autoComplete="current-password"
             placeholder="••••••••"
+            className="w-full rounded-xl border border-neutral-300 px-4 py-3 transition focus:border-black focus:outline-none focus:ring-2 focus:ring-black"
             value={form.password}
             onChange={(e) =>
               setForm({
@@ -112,7 +114,7 @@ export default function Login() {
         </div>
 
         {error && (
-          <div className="border border-red-200 bg-red-50 rounded-xl p-3 text-sm text-red-700">
+          <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
             {error}
           </div>
         )}
@@ -120,26 +122,21 @@ export default function Login() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-black text-white rounded-xl py-3 font-medium hover:bg-neutral-800 transition disabled:opacity-50"
+          className="w-full rounded-xl bg-black py-3 font-medium text-white transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {loading ? "Signing In..." : "Sign In"}
+          {loading ? "Signing in..." : "Sign In"}
         </button>
       </form>
 
-
       <p className="mt-8 text-center text-sm text-neutral-600">
-
-        Don't have an account?
-
+        Don't have a workspace?{" "}
         <Link
           to="/register"
-          className="ml-1 font-semibold text-black hover:underline"
+          className="font-semibold text-black hover:underline"
         >
-          Create one
+          Create Workspace
         </Link>
-
       </p>
-
     </AuthLayout>
   );
 }
