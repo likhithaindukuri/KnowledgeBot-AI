@@ -1,148 +1,118 @@
 import {
-  FileText,
-  Search,
-  ShieldCheck,
-  MessageSquare,
   Building2,
+  FileText,
   Palette,
+  Bot,
+  Globe,
+  ArrowRight,
+  Sparkles,
+  CheckCircle2,
 } from "lucide-react";
 
-const features = [
+const steps = [
   {
-    title: "Upload Your Knowledge Base",
-    desc: "Import PDFs, policies, manuals, FAQs, and internal documentation to build a centralized knowledge hub.",
-    icon: FileText,
-  },
-  {
-    title: "Instant Answers",
-    desc: "Help users find information in seconds through natural language conversations instead of searching documents manually.",
-    icon: Search,
-  },
-  {
-    title: "Trusted Source Citations",
-    desc: "Every response includes document references so users can verify information directly from the source.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Embeddable AI Assistant",
-    desc: "Add your chatbot to any website with a simple integration and start answering questions immediately.",
-    icon: MessageSquare,
-  },
-  {
-    title: "Organization Workspaces",
-    desc: "Each organization gets its own isolated documents, chatbot, settings, and conversation history.",
+    title: "Register Your Organization",
+    description:
+      "Create a dedicated workspace for your university, company, hospital, or business with complete data isolation.",
     icon: Building2,
   },
   {
-    title: "Custom Branding",
-    desc: "Personalize the chatbot with your organization's name, logo, colors, and welcome message.",
+    title: "Upload Your Documents",
+    description:
+      "Import PDFs, policies, FAQs, manuals, and knowledge base documents. AI indexes everything automatically.",
+    icon: FileText,
+  },
+  {
+    title: "Customize Your Chatbot",
+    description:
+      "Add your organization logo, chatbot name, colors, welcome message, and branding to match your website.",
     icon: Palette,
+  },
+  {
+    title: "AI Builds Your Knowledge Base",
+    description:
+      "Nexus processes every document using AI so users receive accurate answers with source citations.",
+    icon: Bot,
+  },
+  {
+    title: "Deploy Anywhere",
+    description:
+      "Copy one embed script and add your AI assistant to your website within minutes.",
+    icon: Globe,
   },
 ];
 
-export default function Features() {
+export default function ProjectOverview() {
   return (
     <section
-      id="features"
+      id="overview"
       className="border-t border-neutral-200 bg-white"
     >
-      <div className="max-w-7xl mx-auto px-6 py-24">
+      <div className="max-w-7xl mx-auto px-6 py-4">
 
         {/* Heading */}
 
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
 
-          <p className="text-sm uppercase tracking-[0.2em] text-neutral-500 font-medium">
-            Features
-          </p>
-
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-black">
-            Everything You Need to Create an AI Knowledge Assistant
+          <h2 className="mt-8 text-4xl md:text-5xl font-bold text-black">
+            From Documents to an AI Assistant in Minutes
           </h2>
 
           <p className="mt-6 text-lg text-neutral-600 leading-8">
-            Give students, customers, employees, and visitors instant access
-            to information from your organization's documents.
+            Nexus transforms your organization's documents into a
+            fully branded AI assistant that can answer questions instantly,
+            provide trusted citations, and be embedded on any website.
           </p>
 
         </div>
 
-        {/* Feature Cards */}
+        {/* Timeline */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+        <div className="mt-20">
 
-          {features.map((feature) => {
-            const Icon = feature.icon;
+          <div className="grid lg:grid-cols-5 gap-8">
 
-            return (
-              <div
-                key={feature.title}
-                className="border border-neutral-200 rounded-2xl p-7 bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
+            {steps.map((step, index) => {
+              const Icon = step.icon;
 
-                <div className="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center">
-                  <Icon size={22} />
+              return (
+                <div
+                  key={step.title}
+                  className="relative"
+                >
+                  <div className="border border-neutral-200 rounded-3xl p-7 bg-white hover:shadow-xl transition duration-300 h-full">
+
+                    <div className="w-14 h-14 rounded-2xl bg-black text-white flex items-center justify-center">
+                      <Icon size={24} />
+                    </div>
+
+                    <div className="mt-6">
+
+                      <p className="text-xs uppercase tracking-widest text-neutral-400">
+                        Step {index + 1}
+                      </p>
+
+                      <h3 className="mt-2 text-xl font-semibold">
+                        {step.title}
+                      </h3>
+
+                      <p className="mt-4 text-sm text-neutral-600 leading-7">
+                        {step.description}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  {index !== steps.length - 1 && (
+                    <div className="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 text-neutral-400">
+                      <ArrowRight size={30} />
+                    </div>
+                  )}
+
                 </div>
-
-                <h3 className="mt-6 text-xl font-semibold text-black">
-                  {feature.title}
-                </h3>
-
-                <p className="mt-4 text-neutral-600 text-sm leading-7">
-                  {feature.desc}
-                </p>
-
-              </div>
-            );
-          })}
-
-        </div>
-
-        {/* Bottom Highlight Section */}
-
-        <div className="mt-20 border border-neutral-200 rounded-3xl bg-neutral-50 p-10">
-
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-
-            <div>
-              <h3 className="text-4xl font-bold text-black">
-                PDFs
-              </h3>
-
-              <p className="mt-2 text-neutral-600 text-sm">
-                Upload knowledge documents
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-4xl font-bold text-black">
-                24/7
-              </h3>
-
-              <p className="mt-2 text-neutral-600 text-sm">
-                Instant question answering
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-4xl font-bold text-black">
-                1-Line
-              </h3>
-
-              <p className="mt-2 text-neutral-600 text-sm">
-                Website integration
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-4xl font-bold text-black">
-                Sources
-              </h3>
-
-              <p className="mt-2 text-neutral-600 text-sm">
-                Answers backed by citations
-              </p>
-            </div>
+              );
+            })}
 
           </div>
 

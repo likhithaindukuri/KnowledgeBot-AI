@@ -38,17 +38,10 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
 
           <a
-            href="#features"
+            href="#overview"
             className="text-neutral-600 hover:text-black transition"
           >
-            Features
-          </a>
-
-          <a
-            href="#use-cases"
-            className="text-neutral-600 hover:text-black transition"
-          >
-            Use Cases
+            Overview
           </a>
 
         </div>

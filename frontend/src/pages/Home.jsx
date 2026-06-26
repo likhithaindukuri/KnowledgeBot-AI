@@ -1,8 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import ProjectOverview from "../components/ProjectOverview";
-import HowItWorks from "../components/HowItWorks";
-import { CtaSection } from "../components/DemoSection";
 import PlatformAssistant from "../components/PlatformAssistant";
 import Footer from "../components/Footer";
 
@@ -12,8 +10,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ProjectOverview />
-      <HowItWorks />
-      <CtaSection />
       <Footer />
       <PlatformAssistant />
     </div>

@@ -9,7 +9,7 @@ import heroImage from "../assets/hero.png";
 
 export default function Hero() {
   return (
-    <section className="max-w-7xl mx-auto px-6 pt-12 py-24">
+    <section className="max-w-7xl mx-auto px-6 pt-10 py-24">
 
       <div className="flex flex-col-reverse lg:flex-row items-start justify-between gap-16">
 
@@ -29,7 +29,7 @@ export default function Hero() {
             using your organization's content with accurate source citations.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-4">
 
             <Link
               to="/register"
@@ -38,17 +38,11 @@ export default function Hero() {
               Create Workspace
             </Link>
 
-            <button
-              className="border border-neutral-300 px-7 py-3 rounded-lg hover:bg-neutral-50 transition"
-            >
-              View Demo
-            </button>
-
           </div>
 
           {/* TRUST INDICATORS */}
 
-          <div className="mt-12 flex flex-wrap gap-6 text-sm text-neutral-600">
+          <div className="mt-6 flex flex-wrap gap-6 text-sm text-neutral-600">
 
             <div className="flex items-center gap-2">
               <FileText size={16} />
