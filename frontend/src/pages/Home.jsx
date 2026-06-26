@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Features from "../components/Features";
+import ProjectOverview from "../components/ProjectOverview";
 import HowItWorks from "../components/HowItWorks";
 import { CtaSection } from "../components/DemoSection";
 import PlatformAssistant from "../components/PlatformAssistant";
@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <Features />
+      <ProjectOverview />
       <HowItWorks />
       <CtaSection />
       <Footer />
